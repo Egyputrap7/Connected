@@ -12,7 +12,7 @@ namespace connecting
         static void Main(string[] args)
         {
             string connectionString = GetConnectionString();
-            string query1 = "select * from empdetails where ccode= 'C001' ";
+            string query1 = "select * from Pembimbing_akademik where NIK= '333' ";
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd1 = new SqlCommand(query1, cn); cn.Open();
@@ -20,7 +20,7 @@ namespace connecting
                 {
                     while (dr1.Read())
                     {
-                        string query2 = "UPDATE empdetails SET cname='Maguire' where ccode= 'C001'";
+                        string query2 = "UPDATE Pembimbing_akademik SET Keahlian='Jaringan' where NIK= '333'";
                         SqlCommand cmd2 = new SqlCommand(query2, cn);
                         cmd2.ExecuteNonQuery();
                         Console.WriteLine("Data has been update");
@@ -33,7 +33,7 @@ namespace connecting
 
         private static string GetConnectionString()
         {
-            return "data source = DESKTOP-E0JBM6N\\EGY;database=HR;MultipleActiveResultSets=True;User ID=sa;Password=egyputradbncr78 ";
+            return "data source = DESKTOP-E0JBM6N\\EGY;database=ProdiTI;MultipleActiveResultSets=True;User ID=sa;Password=egyputradbncr78 ";
         }
     }
 }
